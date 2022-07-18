@@ -14,6 +14,7 @@
 		F8B489CB2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C92885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld */; };
 		F8B489CD2885C3130084905B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B489CC2885C3130084905B /* Assets.xcassets */; };
 		F8B489D02885C3130084905B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B489CE2885C3130084905B /* LaunchScreen.storyboard */; };
+		F8EFFA35288608EF007AF7A0 /* ProblemListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFFA34288608EF007AF7A0 /* ProblemListingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F8B489CC2885C3130084905B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B489CF2885C3130084905B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B489D12885C3130084905B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8EFFA34288608EF007AF7A0 /* ProblemListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemListingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80D5C6F2885FA01001D7D72 /* ProblemListing */ = {
+			isa = PBXGroup;
+			children = (
+				F80D5C722885FA28001D7D72 /* Controller */,
+				F80D5C712885FA20001D7D72 /* View */,
+				F80D5C702885FA12001D7D72 /* Model */,
+			);
+			path = ProblemListing;
+			sourceTree = "<group>";
+		};
+		F80D5C702885FA12001D7D72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F80D5C712885FA20001D7D72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F80D5C722885FA28001D7D72 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F8EFFA34288608EF007AF7A0 /* ProblemListingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F81032F52885F5CE00BE3423 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F81032F62885F6C100BE3423 /* View */,
+				F8B489C02885C3110084905B /* AppDelegate.swift */,
+				F8B489C22885C3110084905B /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F81032F62885F6C100BE3423 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B489C62885C3110084905B /* Main.storyboard */,
+				F8B489CE2885C3130084905B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F8B489B42885C3110084905B = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +111,10 @@
 		F8B489BF2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo */ = {
 			isa = PBXGroup;
 			children = (
-				F8B489C02885C3110084905B /* AppDelegate.swift */,
-				F8B489C22885C3110084905B /* SceneDelegate.swift */,
+				F80D5C6F2885FA01001D7D72 /* ProblemListing */,
+				F81032F52885F5CE00BE3423 /* Main */,
 				F8B489C42885C3110084905B /* ViewController.swift */,
-				F8B489C62885C3110084905B /* Main.storyboard */,
 				F8B489CC2885C3130084905B /* Assets.xcassets */,
-				F8B489CE2885C3130084905B /* LaunchScreen.storyboard */,
 				F8B489D12885C3130084905B /* Info.plist */,
 				F8B489C92885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld */,
 			);
@@ -143,6 +194,7 @@
 			files = (
 				F8B489C52885C3110084905B /* ViewController.swift in Sources */,
 				F8B489CB2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld in Sources */,
+				F8EFFA35288608EF007AF7A0 /* ProblemListingTableViewController.swift in Sources */,
 				F8B489C12885C3110084905B /* AppDelegate.swift in Sources */,
 				F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */,
 			);
