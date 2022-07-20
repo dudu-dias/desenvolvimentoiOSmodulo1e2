@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */; };
 		F8B489C12885C3110084905B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C02885C3110084905B /* AppDelegate.swift */; };
 		F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C22885C3110084905B /* SceneDelegate.swift */; };
 		F8B489C52885C3110084905B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C42885C3110084905B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Context.swift"; sourceTree = "<group>"; };
 		F8B489BD2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduardoEduardoFabioIdevanPhaulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B489C02885C3110084905B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B489C22885C3110084905B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80D10C9288831D300D5CF89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F80D5C6F2885FA01001D7D72 /* ProblemListing */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F871D40728882F19004ED786 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F8B489C92885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		F8B489B42885C3110084905B = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +129,13 @@
 		F8B489BF2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo */ = {
 			isa = PBXGroup;
 			children = (
+				F80D10C9288831D300D5CF89 /* Extensions */,
+				F871D40728882F19004ED786 /* Database */,
 				F80D5C6F2885FA01001D7D72 /* ProblemListing */,
 				F81032F52885F5CE00BE3423 /* Main */,
 				F8B489C42885C3110084905B /* ViewController.swift */,
 				F8B489CC2885C3130084905B /* Assets.xcassets */,
 				F8B489D12885C3130084905B /* Info.plist */,
-				F8B489C92885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld */,
 			);
 			path = EduardoEduardoFabioIdevanPhaulo;
 			sourceTree = "<group>";
@@ -194,6 +213,7 @@
 			files = (
 				F8B489C52885C3110084905B /* ViewController.swift in Sources */,
 				F8B489CB2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld in Sources */,
+				F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */,
 				F8EFFA35288608EF007AF7A0 /* ProblemListingTableViewController.swift in Sources */,
 				F8B489C12885C3110084905B /* AppDelegate.swift in Sources */,
 				F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */,
