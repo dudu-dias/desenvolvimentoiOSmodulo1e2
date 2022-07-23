@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */; };
+		F80D10CF28887C8A00D5CF89 /* ProblemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D10CE28887C8A00D5CF89 /* ProblemFormViewController.swift */; };
 		F8B489C12885C3110084905B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C02885C3110084905B /* AppDelegate.swift */; };
 		F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C22885C3110084905B /* SceneDelegate.swift */; };
 		F8B489C52885C3110084905B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C42885C3110084905B /* ViewController.swift */; };
@@ -15,11 +16,13 @@
 		F8B489CB2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C92885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld */; };
 		F8B489CD2885C3130084905B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B489CC2885C3130084905B /* Assets.xcassets */; };
 		F8B489D02885C3130084905B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B489CE2885C3130084905B /* LaunchScreen.storyboard */; };
+		F8E16F6C288C5C31007093DB /* ProblemListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16F6B288C5C31007093DB /* ProblemListingTableViewCell.swift */; };
 		F8EFFA35288608EF007AF7A0 /* ProblemListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFFA34288608EF007AF7A0 /* ProblemListingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Context.swift"; sourceTree = "<group>"; };
+		F80D10CE28887C8A00D5CF89 /* ProblemFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemFormViewController.swift; sourceTree = "<group>"; };
 		F8B489BD2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduardoEduardoFabioIdevanPhaulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B489C02885C3110084905B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B489C22885C3110084905B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		F8B489CC2885C3130084905B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B489CF2885C3130084905B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B489D12885C3130084905B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E16F6B288C5C31007093DB /* ProblemListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemListingTableViewCell.swift; sourceTree = "<group>"; };
 		F8EFFA34288608EF007AF7A0 /* ProblemListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemListingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +55,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F80D10CC28887C2800D5CF89 /* ProblemForm */ = {
+			isa = PBXGroup;
+			children = (
+				F80D10CD28887C3A00D5CF89 /* Controller */,
+			);
+			path = ProblemForm;
+			sourceTree = "<group>";
+		};
+		F80D10CD28887C3A00D5CF89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F80D10CE28887C8A00D5CF89 /* ProblemFormViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F80D5C6F2885FA01001D7D72 /* ProblemListing */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +91,7 @@
 		F80D5C712885FA20001D7D72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8E16F6B288C5C31007093DB /* ProblemListingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +150,7 @@
 		F8B489BF2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo */ = {
 			isa = PBXGroup;
 			children = (
+				F80D10CC28887C2800D5CF89 /* ProblemForm */,
 				F80D10C9288831D300D5CF89 /* Extensions */,
 				F871D40728882F19004ED786 /* Database */,
 				F80D5C6F2885FA01001D7D72 /* ProblemListing */,
@@ -216,6 +238,8 @@
 				F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */,
 				F8EFFA35288608EF007AF7A0 /* ProblemListingTableViewController.swift in Sources */,
 				F8B489C12885C3110084905B /* AppDelegate.swift in Sources */,
+				F80D10CF28887C8A00D5CF89 /* ProblemFormViewController.swift in Sources */,
+				F8E16F6C288C5C31007093DB /* ProblemListingTableViewCell.swift in Sources */,
 				F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,36 +6,56 @@
 //
 
 import UIKit
+import CoreData
 
 class ProblemListingTableViewController: UITableViewController {
-
+    
+    lazy var fetchedResultController: NSFetchedResultsController<Problem> = {
+        let fetchRequest: NSFetchRequest<Problem> = Problem.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "descriptionProblem", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController.delegate = self
+        return fetchedResultController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("esta funcionando")
+        loadProblem()
       
+    }
+    
+    private func loadProblem(){
+        do{
+           try fetchedResultController.performFetch()
+        }catch{
+           print(error)
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return fetchedResultController.fetchedObjects?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProblemListingTableViewCell else{
+            return UITableViewCell()
+        }
 
-        // Configure the cell...
-
+        let problem = fetchedResultController.object(at: indexPath)
+        cell.configure(with:problem)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,4 +102,10 @@ class ProblemListingTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension ProblemListingTableViewController: NSFetchedResultsControllerDelegate{
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
 }
