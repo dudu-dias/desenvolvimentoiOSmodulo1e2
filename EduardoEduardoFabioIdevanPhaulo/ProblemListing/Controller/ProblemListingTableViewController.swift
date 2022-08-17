@@ -10,6 +10,8 @@ import CoreData
 
 class ProblemListingTableViewController: UITableViewController {
     
+    lazy var arrayProblemas: [Problem]? = []
+    
     lazy var fetchedResultController: NSFetchedResultsController<Problem> = {
         let fetchRequest: NSFetchRequest<Problem> = Problem.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "descriptionProblem", ascending: true)
@@ -28,6 +30,8 @@ class ProblemListingTableViewController: UITableViewController {
     private func loadProblem(){
         do{
            try fetchedResultController.performFetch()
+            arrayProblemas = fetchedResultController.fetchedObjects
+                
         }catch{
            print(error)
         }
@@ -42,7 +46,8 @@ class ProblemListingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fetchedResultController.fetchedObjects?.count ?? 0
+        // arrayProblemas = fetchedResultController.fetchedObjects
+        return arrayProblemas?.count ?? 0
     }
 
     
@@ -50,47 +55,56 @@ class ProblemListingTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProblemListingTableViewCell else{
             return UITableViewCell()
         }
-
-        let problem = fetchedResultController.object(at: indexPath)
+        
+        /* let problem = fetchedResultController.object(at: indexPath) */
+        let problem = arrayProblemas![indexPath.row]
         cell.configure(with:problem)
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    /*override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }*/
 
-    /*
+
+    
     // Override to support editing the table view.
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            tableView.beginUpdates()
+            print("Index ")
+            print(indexPath.row)
+            print("Antes: ")
+            print(arrayProblemas)
+            self.arrayProblemas?.remove(at: indexPath.row)
+            print("Depois: ")
+            print(arrayProblemas)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+     */
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let acaoDeletar = UIContextualAction(style: .destructive, title: "Apagar") {
+            action, view, boolAction in
+            boolAction(true)
+            self.arrayProblemas?.remove(at: indexPath.row)
+            tableView.performBatchUpdates {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } completion: { completed in
+                print("Terminou de excluir")
+            }
+        }
+        return UISwipeActionsConfiguration(actions: [acaoDeletar])
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
