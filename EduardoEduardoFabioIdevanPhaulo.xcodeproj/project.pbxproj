@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */; };
 		F80D10CF28887C8A00D5CF89 /* ProblemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D10CE28887C8A00D5CF89 /* ProblemFormViewController.swift */; };
+		F87C6EFE28B2AF9E008DFB24 /* ProblemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C6EFD28B2AF9E008DFB24 /* ProblemDetailViewController.swift */; };
 		F8B489C12885C3110084905B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C02885C3110084905B /* AppDelegate.swift */; };
 		F8B489C32885C3110084905B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C22885C3110084905B /* SceneDelegate.swift */; };
 		F8B489C52885C3110084905B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B489C42885C3110084905B /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		F80D10CA2888323600D5CF89 /* UIViewController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Context.swift"; sourceTree = "<group>"; };
 		F80D10CE28887C8A00D5CF89 /* ProblemFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemFormViewController.swift; sourceTree = "<group>"; };
+		F87C6EFD28B2AF9E008DFB24 /* ProblemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDetailViewController.swift; sourceTree = "<group>"; };
 		F8B489BD2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduardoEduardoFabioIdevanPhaulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B489C02885C3110084905B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B489C22885C3110084905B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,22 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		F87C6EFB28B2AF1A008DFB24 /* ProblemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F87C6EFC28B2AF6A008DFB24 /* Controller */,
+			);
+			path = ProblemDetail;
+			sourceTree = "<group>";
+		};
+		F87C6EFC28B2AF6A008DFB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F87C6EFD28B2AF9E008DFB24 /* ProblemDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F8B489B42885C3110084905B = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +168,7 @@
 		F8B489BF2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo */ = {
 			isa = PBXGroup;
 			children = (
+				F87C6EFB28B2AF1A008DFB24 /* ProblemDetail */,
 				F80D10CC28887C2800D5CF89 /* ProblemForm */,
 				F80D10C9288831D300D5CF89 /* Extensions */,
 				F871D40728882F19004ED786 /* Database */,
@@ -233,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87C6EFE28B2AF9E008DFB24 /* ProblemDetailViewController.swift in Sources */,
 				F8B489C52885C3110084905B /* ViewController.swift in Sources */,
 				F8B489CB2885C3110084905B /* EduardoEduardoFabioIdevanPhaulo.xcdatamodeld in Sources */,
 				F80D10CB2888323600D5CF89 /* UIViewController+Context.swift in Sources */,
