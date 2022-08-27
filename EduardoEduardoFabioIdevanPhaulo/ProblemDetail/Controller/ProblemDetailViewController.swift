@@ -9,30 +9,36 @@ import UIKit
 
 class ProblemDetailViewController: UIViewController {
 
+    
     @IBOutlet weak var LabelProblem: UILabel!
     
-    @IBOutlet var LabelAddress: UIView!
+    
+    @IBOutlet weak var LabelAdress: UILabel!
     
     
     @IBOutlet weak var LabelData: UILabel!
     
+    
     @IBOutlet weak var LabelDescription: UILabel!
+    
+    var problem: Problem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? ProblemFormViewController
+        vc?.problem = problem
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LabelProblem.text = problem.problemName
+        LabelData.text = problem.registryDate
+        LabelDescription.text = problem.descriptionProblem
+        LabelAdress.text = problem.localization
     }
-    */
+    
 
 }

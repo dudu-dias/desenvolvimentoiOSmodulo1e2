@@ -43,6 +43,7 @@
                                 <connections>
                                     <outlet property="labelProblemData" destination="1mK-tb-tNG" id="3RC-PB-17U"/>
                                     <outlet property="labelProblemName" destination="v7W-Rp-VvJ" id="i2q-pd-3kW"/>
+                                    <segue destination="CUk-n8-KLl" kind="show" id="FGB-OT-fc5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -131,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1176.8" y="-83.497536945812811"/>
         </scene>
-        <!--Title-->
+        <!--Detalhamento-->
         <scene sceneID="e3g-7B-l86">
             <objects>
                 <viewController id="CUk-n8-KLl" customClass="ProblemDetailViewController" customModule="EduardoEduardoFabioIdevanPhaulo" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,19 +140,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qo0-4l-GZj">
-                                <rect key="frame" x="0.0" y="61" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="zlG-4m-lkI">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="w7c-LN-gG9">
-                                            <connections>
-                                                <segue destination="jdk-V0-6GA" kind="show" id="og0-yw-rR9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Problema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH8-gF-sA7">
                                 <rect key="frame" x="29" y="150" width="316" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -160,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imU-dC-Wiw">
-                                <rect key="frame" x="29" y="211" width="292" height="10"/>
+                                <rect key="frame" x="29" y="211" width="292" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -173,7 +161,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-4R-34j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-4R-34j">
                                 <rect key="frame" x="29" y="361" width="302" height="305"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -187,21 +175,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qo0-4l-GZj">
+                                <rect key="frame" x="-12" y="106" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KaI-ZY-B8f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="SXN-eQ-PQv"/>
+                    <navigationItem key="navigationItem" title="Detalhamento" id="SXN-eQ-PQv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="w7c-LN-gG9">
+                            <connections>
+                                <segue destination="jdk-V0-6GA" kind="show" id="og0-yw-rR9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="LabelAddress" destination="4mW-vf-imq" id="81r-eh-f5f"/>
-                        <outlet property="LabelData" destination="xRe-Xh-cBJ" id="Ngq-GC-chi"/>
-                        <outlet property="LabelDescription" destination="fzp-4R-34j" id="o3T-Se-lla"/>
-                        <outlet property="LabelProblem" destination="aH8-gF-sA7" id="cOW-KN-chX"/>
+                        <outlet property="LabelAdress" destination="imU-dC-Wiw" id="Kz6-RO-u3v"/>
+                        <outlet property="LabelData" destination="xRe-Xh-cBJ" id="pvW-Xa-xDR"/>
+                        <outlet property="LabelDescription" destination="fzp-4R-34j" id="J8a-SO-GpX"/>
+                        <outlet property="LabelProblem" destination="aH8-gF-sA7" id="kkF-pG-6U1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4k-MJ-Fq8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176.8" y="674.6305418719212"/>
+            <point key="canvasLocation" x="712.79999999999995" y="652.46305418719214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Npk-AI-VDP">
@@ -223,7 +221,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Y5n-Nj-7EG"/>
+        <segue reference="og0-yw-rR9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

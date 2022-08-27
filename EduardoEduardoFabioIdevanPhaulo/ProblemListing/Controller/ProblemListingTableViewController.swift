@@ -27,10 +27,16 @@ class ProblemListingTableViewController: UITableViewController {
       
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ProblemDetailViewController,
+              let indexPath = tableView.indexPathForSelectedRow else {return}
+        vc.problem = fetchedResultController.object(at: indexPath)
+    }
+    
     private func loadProblem(){
         do{
            try fetchedResultController.performFetch()
-            arrayProblemas = fetchedResultController.fetchedObjects
+            //arrayProblemas = fetchedResultController.fetchedObjects
                 
         }catch{
            print(error)
@@ -47,7 +53,8 @@ class ProblemListingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         // arrayProblemas = fetchedResultController.fetchedObjects
-        return arrayProblemas?.count ?? 0
+        //return arrayProblemas?.count ?? 0
+        return fetchedResultController.fetchedObjects?.count ?? 0
     }
 
     
@@ -57,7 +64,8 @@ class ProblemListingTableViewController: UITableViewController {
         }
         
         /* let problem = fetchedResultController.object(at: indexPath) */
-        let problem = arrayProblemas![indexPath.row]
+        //let problem = arrayProblemas![indexPath.row]
+        let problem = fetchedResultController.object(at: indexPath)
         cell.configure(with:problem)
         return cell
     }
