@@ -186,7 +186,7 @@
                     <navigationItem key="navigationItem" title="Detalhamento" id="SXN-eQ-PQv">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="w7c-LN-gG9">
                             <connections>
-                                <segue destination="jdk-V0-6GA" kind="show" id="og0-yw-rR9"/>
+                                <segue destination="jdk-V0-6GA" kind="show" id="W8g-tI-W7f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -221,7 +221,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="og0-yw-rR9"/>
+        <segue reference="W8g-tI-W7f"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
