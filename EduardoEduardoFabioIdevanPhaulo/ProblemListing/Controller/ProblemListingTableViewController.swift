@@ -51,9 +51,6 @@ class ProblemListingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        // arrayProblemas = fetchedResultController.fetchedObjects
-        //return arrayProblemas?.count ?? 0
         return fetchedResultController.fetchedObjects?.count ?? 0
     }
 
@@ -63,41 +60,20 @@ class ProblemListingTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        /* let problem = fetchedResultController.object(at: indexPath) */
-        //let problem = arrayProblemas![indexPath.row]
         let problem = fetchedResultController.object(at: indexPath)
         cell.configure(with:problem)
         return cell
     }
-    
 
-    /*override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }*/
-
-
-    
-    // Override to support editing the table view.
-    /*
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            print("Index ")
-            print(indexPath.row)
-            print("Antes: ")
-            print(arrayProblemas)
-            self.arrayProblemas?.remove(at: indexPath.row)
-            print("Depois: ")
-            print(arrayProblemas)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            tableView.endUpdates()
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            let problem = fetchedResultController.object(at: indexPath)
+            context.delete(problem)
+            try? context.save()
         }
     }
-     */
     
+    /*
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let acaoDeletar = UIContextualAction(style: .destructive, title: "Apagar") {
@@ -112,7 +88,7 @@ class ProblemListingTableViewController: UITableViewController {
         }
         return UISwipeActionsConfiguration(actions: [acaoDeletar])
     }
-
+    */
 
     /*
     // MARK: - Navigation
